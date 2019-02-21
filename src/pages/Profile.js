@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-type Props = {};
-export default class Profile extends Component<Props> {
+export default class Profile extends Component {
   static navigationOptions = {
     title: '个人信息',
   };

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as homeActions from '../actions/home';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
@@ -7,7 +10,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class Home extends Component<Props> {
+class Home extends Component<Props> {
   static navigationOptions = {
     title: '首页',
   };
@@ -19,16 +22,35 @@ export default class Home extends Component<Props> {
     console.log('🎉🎉🎉🔥');
   }
 
+  onIncrement = () =>
+    this.props.homeActions.homeAdd(this.props.count);
+  ;
+  onDecrement = () => this.props.homeActions.homeDecrement(this.props.count);
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+        <View style={styles.reduxSample}>
+          <Button title=" + " style={styles.flexItem} onPress={this.onIncrement}/>
+          <Text style={styles.flexItem}> {this.props.count} </Text>
+          <Button title=" - " style={styles.flexItem} onPress={this.onDecrement}/>
+        </View>
       </View>
     );
   }
 }
+
+const mapStateToProps = ({home}) => ({
+  count: home.count,
+});
+const mapDispatchToProps = dispatch => ({
+  homeActions: bindActionCreators(homeActions, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 const styles = StyleSheet.create({
   container: {
@@ -47,4 +69,11 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  // reduxSample: {
+  //   flex: 1,
+  //   alignItems: 'stretch',
+  // },
+  // flexItem: {
+  //   flex: 1,
+  // },
 });
