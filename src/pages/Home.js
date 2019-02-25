@@ -69,11 +69,16 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-  // reduxSample: {
-  //   flex: 1,
-  //   alignItems: 'stretch',
-  // },
-  // flexItem: {
-  //   flex: 1,
-  // },
+  reduxSample: {
+    flex: 0,
+    width: 200,
+    height: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  flexItem: {
+    flex: 1,
+    textAlign: 'center',
+  },
 });
