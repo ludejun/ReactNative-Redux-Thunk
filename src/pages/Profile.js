@@ -19,7 +19,7 @@ class Profile extends Component {
   login = () => {
     this.props.userActions.login();
     console.log(1111, this.props.user);
-  }
+  };
 
   render() {
     return (
@@ -27,7 +27,10 @@ class Profile extends Component {
         <Text style={styles.welcome}>Welcome to Profile!</Text>
         <Button title="Go To Home" onPress={() => this.props.navigation.navigate('Home')} />
         <Button title="登录" onPress={this.login} />
-        <Text>登录状态：{this.props.user.logged ? '已登录':'未登录'}{this.props.user.fetching && '  fetching...'}</Text>
+        <Text>
+          登录状态：{this.props.user.logged ? '已登录' : '未登录'}
+          {this.props.user.fetching && '  fetching...'}
+        </Text>
       </View>
     );
   }

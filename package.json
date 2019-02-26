@@ -10,11 +10,6 @@
     "format": "npm run prettier && npm run lint -- --fix",
     "precommit": "npm run format"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
-    }
-  },
   "dependencies": {
     "react": "16.6.3",
     "react-native": "^0.58.4",
