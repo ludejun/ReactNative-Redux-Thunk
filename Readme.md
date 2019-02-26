@@ -1,7 +1,7 @@
-# ReactNative-Redux
+# ReactNative-Redux-Thunk
 ludejun@live.cn
 
-集成ReactNative、Redux、redux-devtools、Navigation、Eslint、Prettier的工程化项目。适合简单项目及学习。
+集成ReactNative、Redux、Thunk、redux-devtools、Navigation、Eslint、Prettier的工程化项目。适合复杂项目开展。
 
 ### 打开redux-devtools的方法：
 1. 打开RN远程调试（模拟器上打开Menu面板，选择远程调试）
