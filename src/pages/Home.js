@@ -22,9 +22,7 @@ class Home extends Component<Props> {
     console.log('🎉🎉🎉🔥');
   }
 
-  onIncrement = () =>
-    this.props.homeActions.homeAdd(this.props.count);
-  ;
+  onIncrement = () => this.props.homeActions.homeAdd(this.props.count);
   onDecrement = () => this.props.homeActions.homeDecrement(this.props.count);
 
   render() {
@@ -34,23 +32,26 @@ class Home extends Component<Props> {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <View style={styles.reduxSample}>
-          <Button title=" + " style={styles.flexItem} onPress={this.onIncrement}/>
+          <Button title=" + " style={styles.flexItem} onPress={this.onIncrement} />
           <Text style={styles.flexItem}> {this.props.count} </Text>
-          <Button title=" - " style={styles.flexItem} onPress={this.onDecrement}/>
+          <Button title=" - " style={styles.flexItem} onPress={this.onDecrement} />
         </View>
       </View>
     );
   }
 }
 
-const mapStateToProps = ({home}) => ({
+const mapStateToProps = ({ home }) => ({
   count: home.count,
 });
 const mapDispatchToProps = dispatch => ({
-  homeActions: bindActionCreators(homeActions, dispatch)
+  homeActions: bindActionCreators(homeActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
 
 const styles = StyleSheet.create({
   container: {
