@@ -12,44 +12,54 @@ ludejun@live.cn
 ### 重新改项目名字方法
 
 1. 更改项目目录下app.json配置
+
 2. 运行react-native-rename
 
     // install
 
-       npm install react-native-rename -g
-       
+    ```shell
+    npm install react-native-rename -g
+    ```
+
        or 
-       
-       yarn global add react-native-rename
-    
+
+    ```shell
+    yarn global add react-native-rename
+    ```
+
     // in project directory
-    
+
        react-native-rename <New_Project_ Name>
 
 
 ### code-push
 参考：https://github.com/Microsoft/react-native-code-push
+
 官方中文版：https://github.com/Microsoft/code-push/blob/master/cli/README-cn.md
+
 注：如要使用code-push需根据上面文档登录codepush账号。不改动也可以跑起来，不影响开发。
 
 ReactNativeReduxThunk
-┌────────────┬──────────────────────────────────────────────────────────────────┐
-│ Name       │ Deployment Key                                                   │
-├────────────┼──────────────────────────────────────────────────────────────────┤
-│ Production │ KUWxBVCPgQMTINEb9ZCZQERghzTBea84ca97-2860-4663-b17c-f29998a1c45d │
-├────────────┼──────────────────────────────────────────────────────────────────┤
-│ Staging    │ iAi7KDiudvIGysnM8WWjmMXJXuspea84ca97-2860-4663-b17c-f29998a1c45d │
-└────────────┴──────────────────────────────────────────────────────────────────┘
-ReactNativeReduxThunkAndroid
-┌────────────┬──────────────────────────────────────────────────────────────────┐
-│ Name       │ Deployment Key                                                   │
-├────────────┼──────────────────────────────────────────────────────────────────┤
-│ Production │ ltk1qpwwtsktwD64fUgVyDvCIJjvea84ca97-2860-4663-b17c-f29998a1c45d │
-├────────────┼──────────────────────────────────────────────────────────────────┤
-│ Staging    │ uhSDFY5g7NErTVC0i6Z1O5VMhJYZea84ca97-2860-4663-b17c-f29998a1c45d │
-└────────────┴──────────────────────────────────────────────────────────────────┘
 
+| Name       | Deployment Key                                               |
+| ---------- | ------------------------------------------------------------ |
+| Production | KUWxBVCPgQMTINEb9ZCZQERghzTBea84ca97-2860-4663-b17c-f29998a1c45d |
+| Staging    | iAi7KDiudvIGysnM8WWjmMXJXuspea84ca97-2860-4663-b17c-f29998a1c45d |
+
+ReactNativeReduxThunkAndroid
+
+| Name       | Deployment Key                                               |
+| ---------- | ------------------------------------------------------------ |
+| Production | ltk1qpwwtsktwD64fUgVyDvCIJjvea84ca97-2860-4663-b17c-f29998a1c45d |
+| Staging    | uhSDFY5g7NErTVC0i6Z1O5VMhJYZea84ca97-2860-4663-b17c-f29998a1c45d |
+
+更新命令行：
+
+```shell
 code-push release-react ReactNativeReduxThunk ios --plistFile "ios/ReactNativeReduxThunk/Info.plist" --development
+```
+
+
 
 
 #### Issues
