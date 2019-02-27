@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">ltk1qpwwtsktwD64fUgVyDvCIJjvea84ca97-2860-4663-b17c-f29998a1c45d</string>
     <string name="app_name">ReactNativeReduxThunk</string>
 </resources>
