@@ -29,6 +29,8 @@ ludejun@live.cn
 
 ### code-push
 参考：https://github.com/Microsoft/react-native-code-push
+官方中文版：https://github.com/Microsoft/code-push/blob/master/cli/README-cn.md
+注：如要使用code-push需根据上面文档登录codepush账号。不改动也可以跑起来，不影响开发。
 
 ReactNativeReduxThunk
 ┌────────────┬──────────────────────────────────────────────────────────────────┐
