@@ -37,8 +37,19 @@ const codePushOptions = {
 };
 
 class Root extends Component {
+
+  componentWillMount() {
+    CodePush.disallowRestart(); // 页禁止重启
+    this.syncImmediate(); // 开始检查更新
+  }
+
+  componentDidMount() {
+    CodePush.allowRestart(); // 在加载完了，允许重启
+    console.log('🎉🎉🎉🔥');
+  }
+
   // 如果有更新的提示
-  static syncImmediate() {
+  syncImmediate = () => {
     CodePush.sync({
       // 安装模式
       // ON_NEXT_RESUME 下次恢复到前台时
@@ -65,16 +76,6 @@ class Root extends Component {
         title: '更新提示',
       },
     });
-  }
-
-  componentWillMount() {
-    CodePush.disallowRestart(); // 页禁止重启
-    this.syncImmediate(); // 开始检查更新
-  }
-
-  componentDidMount() {
-    CodePush.allowRestart(); // 在加载完了，允许重启
-    console.log('🎉🎉🎉🔥');
   }
 
   render() {
